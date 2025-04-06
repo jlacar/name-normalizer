@@ -8,4 +8,26 @@ richer in the latter settings.
 Note that I will be using Arlo Belshee's Commit Message Notation, which you can find at
 https://github.com/RefactoringCombos/ArlosCommitNotation
 
+I'm working on a Macbook Pro, using IntelliJ IDEA, so all the keyboard shortcuts I mention here
+will using key names like CMD, Option, CTRL.
 
+## Step 1 - Enable first test and see it fail
+
+This is fairly straightforward: I go to the test file and delete the @Disabled annotation on the first test. 
+
+IDEA has a feature that reruns tests automatically. This is a great convenience, especially if you're doing TDD. 
+Eliminating a manual step in my development process, even if it's one as trivial as pressing CTRL+Shift+R to run 
+all tests, helps reduce toil and improves my TDD workflow. 
+
+I go to the Run dialog (CMD-4) and hit the "Rerun Automatically" button in the dialog menu.
+
+I see the test fails. 
+
+Success! 
+
+Now to commit my change. As noted previously, I'm using Arlo Belshee's commit message annotation so I prefix 
+the commit comment with ". t" to signify that I modified a test. 
+
+Notes about each step I make during this exercise will be added and committed along with the relevant code change.
+I won't be making separate documentation-only commits with the ". d" prefix if this is the only documentation that 
+changes.
