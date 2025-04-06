@@ -1,11 +1,10 @@
-import org.assertj.core.api.Assertions.*;
+import org.assertj.core.api.Assertions.*
 import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 
 class AuthorNameNormalizerTest {
     private val normalizer = AuthorNameNormalizer()
 
-    @Disabled
     @Test
     fun `returns empty string when empty`() {
         assertThat(normalizer.normalize(""))
