@@ -1,21 +1,17 @@
 import org.assertj.core.api.Assertions.*
 import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.ValueSource
 
 class AuthorNameNormalizerTest {
     private val normalizer = AuthorNameNormalizer()
 
-    @Test
-    fun `returns empty string when empty`() {
-        assertThat(normalizer.normalize(""))
-            .isEqualTo("")
-    }
-
-    @Disabled
-    @Test
-    fun `returns single word name`() {
-        assertThat(normalizer.normalize("Plato"))
-            .isEqualTo("Plato")
+    @ParameterizedTest(name = "[{0}]")
+    @ValueSource(strings = ["", "Plato"])
+    fun `returns same value when empty or single word`(name: String) {
+        assertThat(normalizer.normalize(name))
+            .isEqualTo(name)
     }
 
     @Disabled

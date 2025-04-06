@@ -29,7 +29,7 @@ Notes about each step I make during this exercise will be added and committed al
 
 ## Step 2 - Make the test pass
 
-The test that fails covers the case where the input to the `nomalize` method is an empty string. The expected result is also an empty string.
+The test that fails covers the case where the input to the `normalize` method is an empty string. The expected result is also an empty string.
 
 What's the simplest thing that could possibly work? Well, if we return the same string, that would work, and it's pretty simple.
 

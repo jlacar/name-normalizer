@@ -1,5 +1,5 @@
 class AuthorNameNormalizer {
-    fun normalize(s: String): String {
-        return s;
+    fun normalize(name: String): String {
+        return name;
     }
 }
