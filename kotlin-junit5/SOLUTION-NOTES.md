@@ -323,6 +323,41 @@ Commit: `. F implement swap first and last names functionality.`
 
 Again, dual coding helped find an opportunity to refactor the code and make it express intent more clearly.
 
-The expression `name.contains(' ')` is a good candidate for extraction. It's a simple expression but it's not obvious what it's doing. Extracting it to a private function and giving it a name like `isMultiPart()` makes its intent clearer.
+The expression `name.contains(' ')` is a good candidate for extraction. It's a simple expression but it's not obvious what it's doing. Extracting it to a private function and giving it a name like `isMultiPart()` makes its intent clearer. The conversation, whether it's between members of a pair or mob or in an internal dialog of a solo programmer, might go something like this:
+
+    Verbal info: Does the name contain multiple parts?
+    Visual info: name.contains(' ')
+
+    Wait, there's a translation happening from "contains a space" to "is multi-part". We need to refactor that.
 
 Commit: `. r Extract method to clarify intent of check for multipart names.`
+
+----
+
+## Step 10 - Refactoring
+
+**What we did**
+
+1. Converted the `name` parameter in `isMultiPart()` to a receiver.
+
+**Result**
+
+    3 tests passed, 6 ignored, 9 tests total
+
+**Commentary**
+
+This is a small refactoring to improve the semantics of the code and make it a little more readable. 
+
+One nice feature of Kotlin is that it allows you to define extension functions. By defining `isMultiPart()` as an extension function to `String`, we can call it as if it was a method of `name` instead of passing `name` in as a parameter.
+
+Compare the two versions of the call to the `isMultiPart()` function:
+
+    // version 1 - name is a parameter
+    if (isMultiPart(name))
+
+    // version 2 - name is a receiver
+    if (name.isMultiPart())
+
+This is largely a matter of style but it's a nice feature that allows you to improve the readability of your code.
+
+Commit comment: `.r Convert parameter name to a receiver of isMultiPart()`
