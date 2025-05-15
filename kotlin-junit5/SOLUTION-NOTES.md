@@ -113,3 +113,53 @@ See also:
 * "[Do The Simplest Thing That Could Possibly Work](https://www.ronjeffries.com/xprog/articles/practices/pracsimplest/)" by Ron Jeffries
 
 ----
+
+## Step 3 - Refactor
+
+**Commentary**
+
+Refactoring tends to be the most skipped step in TDD, especially in the early going when changes to the code seem minimal or trivial. Unfortunately, the longer you put off refactoring, the more difficult it becomes and the more you tend to overlook small details, thus reducing the value you get out of TDD.
+
+Skipping the refactoring step once or twice is not the end of the world, but if you find yourself skipping it multiple times in a row, you might be accumulating too many changes. The smaller the change, the easier it will be to refactor. The longer you put off refactoring, the more chances there are for the code to become more resistant to refactoring.
+
+Think of it like working with clay: when it's still fresh and wet, it's easy to work with and shape to whatever you want. Once it starts to dry out, however, it becomes progressively harder to manipulate and change without breaking something. In much the same way, the fresher the code, the easier it is to change. The older code gets, the more difficult it will be to change without breaking something. Avoid breaking things when refactoring.
+
+Key practice: Refactor sooner rather than later and make the code reflect your current understanding as best as you can at all times.
+
+See also: YouTube video where [Ward explains the Debt Metaphor](https://youtu.be/pqeJFYwnkjE?si=QmmrLTV7o3unWyvX) or read the [transcript](https://wiki.c2.com/?WardExplainsDebtMetaphor).
+
+At this point, you might be tempted to skip refactoring and just forge ahead to the next failing test. However, if you take a minute to read the code and check it for duplication and clarity of intent (see [the four rules of simple design](https://martinfowler.com/bliki/BeckDesignRules.html)), you might notice that the parameter `s` of the `normalize()` function doesn't express its intent very well.
+
+**What we can change**
+
+1. Make the parameter `s` express its intent by renaming it to `name`
+
+### Dual Coding: Finding opportunities to refactor
+
+Dual coding is a learning strategy that I often use when checking code against Kent Beck's Four Rules of Simple Design. It's essentially this:
+
+1. Combine visual and verbal information
+2. Explain the visuals in your own words
+
+With code, the visual information is the code itself that you're reading. The verbal information is how you read the code out loud, explaining it in your own words. By combining visual and verbal information this way, it's easier to notice differences between how the code is written and how someone reading it might interpret it.
+
+Try this: Read the code _out loud_, don't just vocalize it in your head. If you're programming in a pair or mob, have the navigator read the code out loud and explain its intent in their own words. Listen to the explanation while reading the code. This activates both the visual and verbal/listening input channels to your brain. Note discrepancies between the story you're hearing and what you're reading.
+
+Take the code we have at this point for example. If I were to explain it in my own words, I might say "The normalize function takes a _name_ and returns _an empty string_."
+
+When I hear myself explain the code this way, I notice that I said "name" but what I read in the code is the parameter `s`. Renaming `s` to `name` eliminates the need to map one concept to the other. These translations often go unnoticed, but they add to the reader's cognitive load.
+
+Programmers who aren't used to being rigorous about choosing good names may think this is a very trivial matter. However, good expressive names are a cornerstone of simple design and clean code. Code that clearly expresses its intent reduces the cognitive load on the reader and enhances their ability to understand its purpose.
+
+Once you get used to writing and reading code that clearly expresses its intent, you'll become more sensitive to the extra effort it takes to read code that doesn't. This kind of sensitivity should start compelling you to refactor more often.
+
+*Pro Tip*: Practice dual coding during the refactoring step to develop a sensitivity to code that could be refactored to express its intent more clearly.
+
+Commit comment: `. r Refactor to make parameter express its intent`
+
+### References
+
+* [Dual Coding and Learning Styles](https://www.learningscientists.org/blog/2019/6/6-1)
+* [Four Rules of Simple Design](https://martinfowler.com/bliki/BeckDesignRules.html)
+
+----
