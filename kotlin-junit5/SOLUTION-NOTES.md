@@ -421,3 +421,22 @@ Commit comment: `. t (RED) Enable trim leading and trailing whitespace test and 
 This change had a small element of risk because I manually renamed the `name` parameter to `rawName`. The risk, however, was minimal because the function is still very short. At first, I introduced a `trimmed` local variable to store the trimmed name and then changed all the references to `name` after that to `trimmedName`. But after seeing the result, I decided to revert and keep the semantics for `name` instead. Introducing `rawName` to represent the original, unmodified name was a smaller change. The name might not be the best but it is good enough for now. I'll refactor it later if I think of a better name.
 
 Commit comment: `. F implement trims leading and trailing whitespace functionality`
+
+## Step 14 - Refactoring
+
+**What we did**
+
+1. Refactor `rawName` to `authorName`
+
+**Result**
+
+    4 tests passed, 5 ignored, 9 tests total
+
+**Commentary**
+
+I decided to rename `rawName` to `authorName` to make it more consistent with the context of the function. One might argue that it's redundant because the enclosing class already conveys the idea that the function is operating on an author's name. But I think it's good to be explicit about the intent of the function.
+
+Commit comment: `. r Refactor rawName to authorName`
+
+----
+

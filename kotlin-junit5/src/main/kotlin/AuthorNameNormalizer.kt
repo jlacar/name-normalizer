@@ -1,6 +1,6 @@
 class AuthorNameNormalizer {
-    fun normalize(rawName: String): String {
-        val name = rawName.trim()
+    fun normalize(authorName: String): String {
+        val name = authorName.trim()
         if (name.isMultiPart()) {
             val parts = name.parts()
             return "${parts.last()}, ${parts.first()}"
