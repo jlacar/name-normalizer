@@ -382,3 +382,23 @@ Similar to the previous refactoring, this refactoring improves the semantics of 
 Commit comment: `.r Extract method to split name into parts and convert parameter name to a receiver of parts()`
 
 ----
+
+## Step 12 - Enable trims leading and trailing whitespace test and see it fail.
+
+**What we did**
+
+1. Deleted `@Disabled` to enable the trims leading and trailing whitespace test
+2. Ran the test and saw it fail
+
+**Result**
+
+    AuthorNameNormalizerTest > trims leading and trailing whitespace() FAILED
+    org.opentest4j.AssertionFailedError at AuthorNameNormalizerTest.kt:29
+
+    9 tests completed, 1 failed, 5 skipped
+
+**Commentary**
+
+The test says it expects the name to be trimmed of leading and trailing whitespace.
+
+Commit comment: `. t (RED) Enable trim leading and trailing whitespace test and see it fail`
