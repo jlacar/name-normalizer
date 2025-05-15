@@ -361,3 +361,24 @@ Compare the two versions of the call to the `isMultiPart()` function:
 This is largely a matter of style but it's a nice feature that allows you to improve the readability of your code.
 
 Commit comment: `.r Convert parameter name to a receiver of isMultiPart()`
+
+----
+
+## Step 11 - Refactoring
+
+**What we did**
+
+1. Extracted the expression to split the name into parts
+2. Converted the `name` parameter in `parts()` to a receiver.
+
+**Result**
+
+    3 tests passed, 6 ignored, 9 tests total
+
+**Commentary**
+
+Similar to the previous refactoring, this refactoring improves the semantics of the code and makes it a little more readable by extracting the expression to split the name into parts, then converting the `name` parameter to a receiver.
+
+Commit comment: `.r Extract method to split name into parts and convert parameter name to a receiver of parts()`
+
+----
