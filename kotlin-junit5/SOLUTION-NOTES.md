@@ -306,3 +306,23 @@ Commit: `. t (RED) Enable swap first and last name test and see it fail`
 This is the biggest change we've made so far: a whopping four new lines of code! First, we used `split()` to separate the words in the name then used a string template to format the name the way it's expected.
 
 Commit: `. F implement swap first and last names functionality.`
+
+----
+
+## Step 9 - Refactoring
+
+**What we did**
+
+1. Extracted the expression to check name for multiple words
+
+**Result**
+
+    3 tests passed, 6 ignored, 9 tests total
+
+**Commentary**
+
+Again, dual coding helped find an opportunity to refactor the code and make it express intent more clearly.
+
+The expression `name.contains(' ')` is a good candidate for extraction. It's a simple expression but it's not obvious what it's doing. Extracting it to a private function and giving it a name like `isMultiPart()` makes its intent clearer.
+
+Commit: `. r Extract method to clarify intent of check for multipart names.`
