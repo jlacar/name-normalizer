@@ -265,3 +265,27 @@ No duplication, code expresses itself clearly, all tests pass, nothing to make s
 Commit: `.d Update solution notes to comment about skipping refactoring`
 
 ----
+
+## Step 7 - Enable the swaps first and last names test and see it fail
+
+**What we did**
+
+1. Deleted `@Disabled` to enable the swaps first and last names test
+2. Ran the test and saw it fail
+
+**Result**
+
+    AuthorNameNormalizerTest > swaps first and last names() FAILED
+    org.opentest4j.AssertionFailedError at AuthorNameNormalizerTest.kt:23
+
+    9 tests completed, 1 failed, 6 skipped
+
+**Commentary**
+
+After handling the Zero and One cases, handling the Many case seems like a logical next step. The test says it expects the first and last names to be swapped and separated by a comma and space.
+
+Looking ahead at the other tests, you'll notice that this is a key piece of functionality that other expected behaviors rely on.
+
+Commit: `. t (RED) Enable swap first and last name test and see it fail`
+
+----
