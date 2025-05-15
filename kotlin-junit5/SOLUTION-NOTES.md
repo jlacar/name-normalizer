@@ -289,3 +289,20 @@ Looking ahead at the other tests, you'll notice that this is a key piece of func
 Commit: `. t (RED) Enable swap first and last name test and see it fail`
 
 ----
+
+## Step 8 - Make the swap first and last names test pass
+
+**What we did**
+
+1. Separate the name parts using `split()`
+2. Format the name, last name first, separated by a comma
+
+**Result**
+
+    3 tests passed, 6 ignored, 9 tests total
+
+**Commentary**
+
+This is the biggest change we've made so far: a whopping four new lines of code! First, we used `split()` to separate the words in the name then used a string template to format the name the way it's expected.
+
+Commit: `. F implement swap first and last names functionality.`
