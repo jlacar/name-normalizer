@@ -261,3 +261,19 @@ By taking smaller steps, we are practicing emergent design, slowly growing the s
 Commit: `. F (GREEN) make the single word test pass`
 
 ----
+
+## Step 6 - Refactor
+
+At this point, it doesn't look like there's anything we can refactor so we will skip refactoring for now.
+
+**What we did**
+
+1. Made a conscious choice to skip refactoring
+
+**Commentary**
+
+No duplication, code expresses itself clearly, all tests pass, nothing to make simpler/smaller.
+
+Commit: `. d Update solution notes to comment about skipping refactoring`
+
+----
