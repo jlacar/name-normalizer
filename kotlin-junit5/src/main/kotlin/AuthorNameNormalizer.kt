@@ -1,11 +1,20 @@
 class AuthorNameNormalizer {
     fun normalize(authorName: String): String {
         val name = authorName.trim()
-        if (name.isMultiPart()) {
-            val parts = name.parts()
-            return "${parts.last()}, ${parts.first()}"
+        return when {
+            name.isMultiPart() -> normalized(name)
+            else -> name
         }
-        return name
+    }
+
+    private fun normalized(name: String): String {
+        val parts = name.parts()
+        val middleInitials = initialize(parts.drop(1).dropLast(1))
+        return "${parts.last()}, ${parts.first()}" + if (middleInitials.isNotBlank()) " $middleInitials" else ""
+    }
+
+    private fun initialize(middleParts: List<String>): String {
+        return middleParts.joinToString(" ") { "${it.first()}." }.let { it.ifBlank { "" } }
     }
 
     private fun String.parts(): List<String> = split(' ')
