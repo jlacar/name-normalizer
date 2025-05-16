@@ -322,3 +322,24 @@ This is the biggest change we've made so far: a whopping four new lines of code!
 Commit: `. F (GREEN) implement swap first and last names functionality.`
 
 ----
+
+## Step 9 - Refactoring
+
+**What we did**
+
+1. Extracted the expression to check name for multiple words
+
+**Result**
+
+    3 tests passed, 6 ignored, 9 tests total
+
+**Commentary**
+
+The expression `name.contains(' ')` is a good candidate for extraction. It's a simple expression but it's not obvious what it's doing. Extracting it to a private function and giving it a name like `isMultiPart()` makes its intent clearer. Again, dual coding helped highlight this refactoring opportunity:
+
+    Verbal info: Does the name contain multiple parts?
+    Visual info: name.contains(' ')
+
+Hiding the implementation detail in a private function named `isMultiPart()` clarifies the intent of the code and makes it easier to understand.
+
+Commit: `. r Extract method to clarify intent of check for multipart names.`
