@@ -479,3 +479,28 @@ This failing test shows two problems with the current solution.
 2. It doesn't initialize the middle name
 
 Commit comment: `. t (RED) Enable initializes middle name test and see it fail`
+
+----
+
+## Step 16 - Make the initializes middle name test pass
+
+**What we did**
+
+1. Fix the problem with the last name 
+2. Add logic to initialize the middle name 
+3. Add the middle initial to the end of the first name
+
+**Result**
+
+    5 tests passed, 4 ignored, 9 tests total
+
+**Commentary**
+
+This is the most change we've made to the solution so far. 
+
+First, we had to fix the problem with the wrong last name being picked up. The bug was caused by hardcoding `parts[1]` as the last name. This would fail if the name had more than two parts. To fix the bug, replace `parts[1]` with `parts.last()`. For symmetry, replace `parts[0]` with `parts.first()`. 
+
+The logic for initializing the middle name is a bit messy but it works. We'll refactor it for clarity in the next step.
+
+Commit comment: `. F (GREEN) implement initializes middle name functionality to make test pass`
+
