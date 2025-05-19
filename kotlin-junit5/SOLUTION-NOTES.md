@@ -435,3 +435,21 @@ This change had a small element of risk because I manually renamed the `name` pa
 Commit comment: `^ F (GREEN) implement trims leading and trailing whitespace functionality to make test pass`
 
 ----
+
+## Step 14 - Refactoring
+
+**What we did**
+
+1. Refactor `rawName` to `authorName`
+
+**Result**
+
+    4 tests passed, 5 ignored, 9 tests total
+
+**Commentary**
+
+I decided to rename `rawName` to `authorName` to make it more consistent with the context of the function. One might argue that it's redundant because the enclosing class already conveys the idea that the function is operating on an author's name. I'm choosing to live with some redundancy over introducing a new concept of a "raw" name. 
+
+Commit comment: `. r Refactor rawName to authorName`
+
+----
