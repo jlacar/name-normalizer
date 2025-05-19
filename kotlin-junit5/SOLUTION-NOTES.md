@@ -375,3 +375,22 @@ This is largely a matter of style but it's a nice feature that allows you to imp
 Commit comment: `. r Convert isMultiPart name parameter to a receiver`
 
 ----
+
+## Step 11 - Refactoring
+
+**What we did**
+
+1. Extracted the expression to split the name into parts
+2. Converted the `name` parameter in `parts()` to a receiver.
+
+**Result**
+
+    3 tests passed, 6 ignored, 9 tests total
+
+**Commentary**
+
+Similar to the previous refactoring, this refactoring improves the semantics of the code and makes it a little more readable by extracting the expression to split the name into parts, then converting the `name` parameter to a receiver.
+
+Commit comment: `. r Extract function to split name into its parts and convert name parameter to a receiver.`
+
+----
