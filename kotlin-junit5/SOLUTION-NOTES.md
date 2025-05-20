@@ -690,3 +690,21 @@ The test fails because the logic to append a suffix is not implemented.
 
 Commit comment: `. t (RED) Enable test to append suffix`
 
+----
+
+## Step 26 - Implement logic for appending suffix
+
+**What we did**
+
+1. Modified the `parts()` function, making it return a `Pair` instead of just a `String`
+
+**Result**
+
+    8 tests passed, 1 ignored, 9 tests total
+
+**Commentary**
+
+This is a relatively large change compared to other changes made so far. Even though the return type was changed from a simple `String` to a `Pair(List<String>, String)`, Kotlin's type inference makes this change relatively painless.
+
+Commit comment: `. F Add logic to append suffix`
+
