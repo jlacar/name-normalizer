@@ -591,3 +591,21 @@ Commit comment: `. r Extract right-hand side of the assignment and inline the mi
 The test expects one-letter middle names to not be initialized. It fails because the current solution doesn't check for one-letter middle names.
 
 Commit comment: `. t (RED) Enable one-letter middle name not initialized test`
+
+----
+
+## Step 21 - Implement one-letter middle name not initialized logic
+
+**What we did**
+
+1. Added check for one-letter middle name
+
+**Result**
+
+    6 tests passed, 3 ignored, 9 tests total
+
+**Commentary**
+
+Added a check for more than one letters in the middle name.
+
+Commit comment: `. F Add check so that one-letter middle names are not initialized`
