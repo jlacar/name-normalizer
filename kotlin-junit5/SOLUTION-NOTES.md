@@ -504,3 +504,31 @@ The logic for initializing the middle name is a bit messy but it works. We'll re
 
 Commit comment: `. F (GREEN) implement initializes middle name functionality to make test pass`
 
+----
+
+## Step 17 - Refactoring
+
+**What we did**
+
+1. Extracted the logic picking out the middle name to `middle()`
+2. Renamed `middle` to `middleInitial`
+
+**Result**
+
+    5 tests passed, 4 ignored, 9 tests total
+
+**Commentary**
+
+This starts to clarify the intent of the code to initialize the middle name. We start by extracting the logic that extracts the middle name(s) to a private function. Then we rename the `middle` variable so it expresses its purpose more completely.
+
+Prior to this I tried extracting the entire right side of the assignment to `middle` but it turned out to be too big of a change for what I wanted to do, which was to be able to write:
+
+    val middleInitial = initialize(middle(parts))
+
+I had considered refactoring to this:
+
+    val middleInitial = middle(parts).initialized()
+
+but decided I liked how the former aligned with my verbal explanation of the code.
+
+Commit comment: `. r Rename middle to middleInitial and extract logic to pick out middle name`
