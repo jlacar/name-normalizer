@@ -566,3 +566,28 @@ Commit comment: `. r Introduce middleNames variable in preparation for next refa
 After extracting the right-hand side of the assignment to a private function, we can now inline the expression to pick out the middle parts of the name and get the code we wanted.
 
 Commit comment: `. r Extract right-hand side of the assignment and inline the middleNames variable
+
+----
+
+## Step 20 - Enable test for not initializing one-letter middle name
+
+**What we did**
+
+1. Deleted `@Disabled` to enable the one-letter middle name test
+2. Run the test and see it fail
+
+**Result**
+
+    AuthorNameNormalizerTest > does not initialize one letter middle name() FAILED
+    org.opentest4j.AssertionFailedError: 
+    expected: "Truman, Harry S"
+     but was: "Truman, Harry S."
+        at app//AuthorNameNormalizerTest.does not initialize one letter middle name(AuthorNameNormalizerTest.kt:41)
+
+     9 tests completed, 1 failed, 3 skipped
+
+**Commentary**
+
+The test expects one-letter middle names to not be initialized. It fails because the current solution doesn't check for one-letter middle names.
+
+Commit comment: `. t (RED) Enable one-letter middle name not initialized test`
