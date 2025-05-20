@@ -768,3 +768,22 @@ Commit comment: `.t (RED) Enable the throws exception with multiple commas test`
 Added a check for multiple commas and throw an `IllegalArgumentException`
 
 Commit comment: `. F (GREEN) Implement check for multiple commas`
+
+----
+
+## Step 30 - Refactoring
+
+**What we did**
+
+1. Performed a few extractions to keep `parts()` composed and single level of abstraction.
+2. Lift the return out of the if statement in the main function
+
+**Result**
+
+    9 tests passed, 9 tests total
+
+**Commentary**
+
+These extractions make the code more composed and readable
+
+Commit comment: `. r Compose and clearly express intent`

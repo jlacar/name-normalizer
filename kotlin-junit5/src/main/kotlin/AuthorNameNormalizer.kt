@@ -1,12 +1,11 @@
 class AuthorNameNormalizer {
     fun normalize(authorName: String): String {
         val name = authorName.trim()
-        if (name.isMultiPart()) {
+        return if (name.isMultiPart()) {
             val (parts, suffix) = name.parts()
             val middleInitials = initialize(middle(parts))
-            return "${parts.last()}, ${parts.first()}$middleInitials$suffix"
-        }
-        return name
+            "${parts.last()}, ${parts.first()}$middleInitials$suffix"
+        } else name
     }
 
     private fun String.isMultiPart(): Boolean = contains(' ')
@@ -14,15 +13,25 @@ class AuthorNameNormalizer {
     private fun String.parts(): Pair<List<String>, String> {
         return when {
             hasSuffix() -> {
-                if (count { it == ',' } > 1) throw IllegalArgumentException("name contains two commas")
-                val parts = split(", ")
-                parts[0].split(" ") to ", ${parts[1]}"
+                rejectMultipleCommas()
+                namesAndSuffix()
             }
             else -> {
-                split(' ') to ""
+                namesWithNoSuffix()
             }
         }
     }
+
+    private fun String.rejectMultipleCommas() {
+        if (count { it == ',' } > 1) throw IllegalArgumentException("name contains two commas")
+    }
+
+    private fun String.namesAndSuffix(): Pair<List<String>, String> {
+        val parts = split(", ")
+        return parts[0].split(" ") to ", ${parts[1]}"
+    }
+
+    private fun String.namesWithNoSuffix(): Pair<List<String>, String> = split(' ') to ""
 
     private fun String.hasSuffix(): Boolean = this.contains(", ")
 
