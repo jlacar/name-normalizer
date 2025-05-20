@@ -750,3 +750,21 @@ Commit comment: `. r Extract function and convert if to when`
 This test fails because the logic is missing.
 
 Commit comment: `.t (RED) Enable the throws exception with multiple commas test`
+
+----
+
+## Step 29 - Implement check for multiple commas
+
+**What we did**
+
+1. Added logic to check for multiple commas
+
+**Result**
+
+    9 tests passed, 9 tests total
+
+**Commentary**
+
+Added a check for multiple commas and throw an `IllegalArgumentException`
+
+Commit comment: `. F (GREEN) Implement check for multiple commas`
