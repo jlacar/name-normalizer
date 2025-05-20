@@ -548,3 +548,21 @@ Commit comment: `. r Rename middle to middleInitial and extract logic to pick ou
 This is an intermediate step that will be reverted with an Inline variable refactoring later once we have more of the target code structure in place. I try to do automated refactoring as much as I can rather than just manually editing the code. It may seem more tedious and roundabout but automated refactoring is safer if you do it in small steps.
 
 Commit comment: `. r Introduce middleNames variable in preparation for next refactoring steps`
+
+----
+
+## Step 19 - Complete refactoring
+
+**What we did**
+
+1. Complete refactoring to `initialize(middle(parts))`
+
+**Result**
+
+    5 tests passed, 4 ignored, 9 tests total
+
+**Commentary**
+
+After extracting the right-hand side of the assignment to a private function, we can now inline the expression to pick out the middle parts of the name and get the code we wanted.
+
+Commit comment: `. r Extract right-hand side of the assignment and inline the middleNames variable
