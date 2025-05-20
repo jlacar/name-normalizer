@@ -609,3 +609,21 @@ Commit comment: `. t (RED) Enable one-letter middle name not initialized test`
 Added a check for more than one letters in the middle name.
 
 Commit comment: `. F Add check so that one-letter middle names are not initialized`
+
+----
+
+## Step 22 - Refactoring
+
+**What we did**
+
+1. Tidy for reading order
+
+**Result**
+
+    6 tests passed, 3 ignored, 9 tests total
+
+**Commentary**
+
+Tidy up so code is in reading order. This makes the logic easier to follow.
+
+Commit comment: `. r Tidy up for reading order`
