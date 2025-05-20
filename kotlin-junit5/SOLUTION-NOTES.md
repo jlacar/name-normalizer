@@ -627,3 +627,24 @@ Commit comment: `. F Add check so that one-letter middle names are not initializ
 Tidy up so code is in reading order. This makes the logic easier to follow.
 
 Commit comment: `. r Tidy up for reading order`
+
+----
+
+## Step 23 - Enable multiple middle names test
+
+**What we did**
+
+1. Deleted `@Disabled` to enable the initializes multiple middle names test
+2. Run the test and see it fail
+
+**Result**
+
+    7 tests passed, 2 ignored, 9 tests total
+
+**Commentary**
+
+This test didn't fail because the logic already accounts for multiple middle names. We might consider combining this with the other tests for initializing middle name.
+
+Commit comment: `. t (GREEN) Enable initializing multiple middle names test`
+
+----
