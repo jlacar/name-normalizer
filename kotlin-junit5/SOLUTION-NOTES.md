@@ -787,3 +787,21 @@ Commit comment: `. F (GREEN) Implement check for multiple commas`
 These extractions make the code more composed and readable
 
 Commit comment: `. r Compose and clearly express intent`
+
+----
+
+## Step 31 - Refactoring
+
+**What we did**
+
+1. Convert if to when
+
+**Result**
+
+    9 tests passed, 9 tests total
+
+**Commentary**
+
+Refactoring to make style consistent in using a when expression.
+
+Commit comment: `.r Tidy for style consistency and symmetry`
