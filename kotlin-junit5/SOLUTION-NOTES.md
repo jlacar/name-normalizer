@@ -728,3 +728,25 @@ The extract refactoring was to make the intent clear and expressed in the contex
 Commit comment: `. r Extract function and convert if to when`
 
 ----
+
+## Step 28 - Enable multiple comma throws exception test
+
+**What we did**
+
+1. Deleted `@Disabled` to enable the test for appending the suffix
+2. Run the test and see it fail
+
+**Result**
+
+    AuthorNameNormalizerTest > throws when name contains two commas() FAILED
+    java.lang.AssertionError: 
+    Expecting code to raise a throwable.
+        at AuthorNameNormalizerTest.throws when name contains two commas(AuthorNameNormalizerTest.kt:59)
+
+    9 tests completed, 1 failed
+
+**Commentary**
+
+This test fails because the logic is missing.
+
+Commit comment: `.t (RED) Enable the throws exception with multiple commas test`
