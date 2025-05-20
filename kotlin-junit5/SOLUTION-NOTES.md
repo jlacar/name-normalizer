@@ -532,3 +532,19 @@ I had considered refactoring to this:
 but decided I liked how the former aligned with my verbal explanation of the code.
 
 Commit comment: `. r Rename middle to middleInitial and extract logic to pick out middle name`
+
+## Step 18 - Continue refactoring
+
+**What we did**
+
+1. Introduce a variable to facilitate automated refactoring to `initialize(middle(parts))`
+
+**Result**
+
+    5 tests passed, 4 ignored, 9 tests total
+
+**Commentary**
+
+This is an intermediate step that will be reverted with an Inline variable refactoring later once we have more of the target code structure in place. I try to do automated refactoring as much as I can rather than just manually editing the code. It may seem more tedious and roundabout but automated refactoring is safer if you do it in small steps.
+
+Commit comment: `. r Introduce middleNames variable in preparation for next refactoring steps`
