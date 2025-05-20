@@ -708,3 +708,23 @@ This is a relatively large change compared to other changes made so far. Even th
 
 Commit comment: `. F Add logic to append suffix`
 
+----
+
+## Step 27 - Refactoring
+
+**What we did**
+
+1. Extracted check for `", "` to a private function
+2. Converted if to when
+
+**Result**
+
+    8 tests passed, 1 ignored, 9 tests total
+
+**Commentary**
+
+The extract refactoring was to make the intent clear and expressed in the context of the problem (has suffix rather than contains a comma). Converting to a when expression is more of a matter of style. The when expression seems to be a preferred form in Kotlin.
+
+Commit comment: `. r Extract function and convert if to when`
+
+----
