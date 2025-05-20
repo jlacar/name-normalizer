@@ -805,3 +805,21 @@ Commit comment: `. r Compose and clearly express intent`
 Refactoring to make style consistent in using a when expression.
 
 Commit comment: `.r Tidy for style consistency and symmetry`
+
+----
+
+## Step 32 - Refactoring
+
+**What we did**
+
+1. Removed unused import for Disabled
+
+**Result**
+
+    9 tests passed, 9 tests total
+
+**Commentary**
+
+Gets rid of the warning in the IDE
+
+Commit comment: `. r Get rid of warning about unused import in test`
